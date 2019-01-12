@@ -224,6 +224,18 @@ const Native = {
         ret.code == 200 ? resolve(ret) : reject(ret)
       })
     })
+  },
+  /**
+   * 上送埋点
+   */
+  callTrack: function (opt) {
+    return new Promise(function (resolve, reject) {
+      TurboJSBridge.call('track', {
+        data: opt
+      }, function (res) {
+        ret.code == 200 ? resolve(ret) : reject(ret)
+      })
+    })
   }
 }
 export default Native
